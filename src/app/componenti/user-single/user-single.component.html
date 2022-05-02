@@ -1,4 +1,8 @@
 
-<div class="border m-1 c-salmone">
+<div class="d-flex border m-1 c-salmone">
     <p>user-single works!</p>
+    <button class="btn btn-secondary" (click)="toggle()"> {{ buttonContent }}</button>
+    <div *ngIf="showDetails && showNever" >
+        <angapp-user-detail></angapp-user-detail>
+    </div>
 </div>

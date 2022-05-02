@@ -10,6 +10,9 @@ import { UserSingleComponent } from './componenti/user-single/user-single.compon
 import { OrderListComponent } from './componenti/order-list/order-list.component';
 import { OrderSingleComponent } from './componenti/order-single/order-single.component';
 import { OrderDetailComponent } from './componenti/order-detail/order-detail.component';
+import { NavbarComponent } from './componenti/navbar/navbar.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ErrComponentComponent } from './error/err-component/err-component.component';
 
 @NgModule({
   declarations: [
@@ -21,10 +24,13 @@ import { OrderDetailComponent } from './componenti/order-detail/order-detail.com
     UserSingleComponent,
     OrderListComponent,
     OrderSingleComponent,
-    OrderDetailComponent
+    OrderDetailComponent,
+    NavbarComponent,
+    ErrComponentComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

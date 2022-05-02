@@ -3,6 +3,5 @@
 }
 
 .area{
-    width: 41vw;
-    height: 80vh;
+    overflow: scroll;
 }
