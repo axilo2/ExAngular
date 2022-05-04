@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 
+  showDetail: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggle() {
+    this.showDetail = !this.showDetail;
+  }
 }

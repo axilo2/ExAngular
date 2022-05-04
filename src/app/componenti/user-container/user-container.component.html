@@ -1,7 +1,13 @@
 <div class="border c-azzurro area">
     <p>user-container.component</p>
-    <div class="d-flex">
-        <angapp-user-list></angapp-user-list>
-        
+    <div class="d-flex justify-content-around h-100">
+        <angapp-user-list
+            [showDetail]="true"
+            (toggle)="toggle()"
+        ></angapp-user-list>
+        <angapp-user-detail
+            *ngIf="showDetail"
+            (toggle)="toggle()"
+        ></angapp-user-detail>
     </div>
 </div>
