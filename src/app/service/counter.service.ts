@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
@@ -6,27 +7,35 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
 
-  private _counter: number = 0;
+  private counter = new BehaviorSubject<number>(0)
 
   constructor() { }
 
   getCounter() {
-    if( this._counter < 0){
-      throw new Error("ERR: This value is less than 0")
-    }else{
-      return this._counter
-    }
+    return this.counter.getValue()
   }
 
   addCounter(x: number) {
-    this._counter += x;
+    let defaultValue = 1;
+
+    this.counter.next(this.counter.value + x)
+
+    if(!x) {
+      this.counter.value + defaultValue
+    }
   }
 
   subCounter(x: number) {
-    if(this._counter < 0) {
-      return console.log( 'This value is less than 0');
+    let defaultValue = 1;
+
+    
+
+    if(!x) {
+      this.counter.value - defaultValue
+    }else if(this.counter.value <= 0 ){
+      throw new Error('This value is less than 0')
     }else{
-      this._counter -= x;
+      this.counter.next(this.counter.value - x)
     }
   }
 }
