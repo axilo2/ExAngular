@@ -1,0 +1,5 @@
+<p>counter {{ counterService.getCounter() }}</p>
+<angapp-edit-counter 
+    (increment)="getAdd($event)"
+    (decrement)="getSub($event)">
+</angapp-edit-counter>
