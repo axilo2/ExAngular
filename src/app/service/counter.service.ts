@@ -11,20 +11,22 @@ export class CounterService {
   constructor() { }
 
   getCounter() {
-   this._counter = this._counter;
+    if( this._counter < 0){
+      return console.log("ERR: This value is less than 0")
+    }else{
+      return this._counter
+    }
   }
 
   addCounter(x: number) {
-    this._counter = this._counter + x;
-    console.log(this._counter);
+    this._counter += x;
   }
 
   subCounter(x: number) {
     if(this._counter < 0) {
       console.log(error, 'This value is less than 0');
     }else{
-      this._counter = this._counter - x;
-      console.log(this._counter);
+      this._counter -= x;
     }
   }
 }
