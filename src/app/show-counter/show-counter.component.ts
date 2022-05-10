@@ -12,6 +12,10 @@ export class ShowCounterComponent implements OnInit {
     return this.counterService.addCounter(plus)
   }
 
+  getSub(minus: number) {
+    return this.counterService.subCounter(minus)
+  }
+
   constructor( public counterService: CounterService ) {  }
 
   ngOnInit(): void {

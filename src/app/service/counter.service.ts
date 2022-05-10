@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { error } from 'console';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,7 @@ export class CounterService {
 
   getCounter() {
     if( this._counter < 0){
-      return console.log("ERR: This value is less than 0")
+      throw new Error("ERR: This value is less than 0")
     }else{
       return this._counter
     }
@@ -24,7 +24,7 @@ export class CounterService {
 
   subCounter(x: number) {
     if(this._counter < 0) {
-      console.log(error, 'This value is less than 0');
+      return console.log( 'This value is less than 0');
     }else{
       this._counter -= x;
     }
