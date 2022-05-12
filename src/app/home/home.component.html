@@ -1,0 +1,14 @@
+<h2>Ci sono {{ prop.length }} proprietà</h2>
+
+<div class="d-flex flex-wrap">
+    <p>Proprietà:</p>
+    <p *ngFor="let props of prop">"[{{ props.name }}]"</p>
+</div>
+<br>
+<div>
+    <h2>Api's info:</h2>
+    <div class="card mt-3" *ngFor="let props of prop">
+        <p>Name: {{ props.name }}</p>
+        <p>Endpoint: {{ props.endpoint }}</p>
+    </div>
+</div>
